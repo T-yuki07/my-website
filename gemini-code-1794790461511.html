@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ゆきの自己紹介 | 大学1年生</title>
+  <style>
+    :root {
+      --bg-base: #f4f8fc;
+      --bg-card: #ffffff;
+      --primary: #1a66b8;
+      --primary-dark: #124a87;
+      --primary-light: #e6f1fc;
+      --accent: #3898ec;
+      --text-main: #1e293b;
+      --text-sub: #475569;
+      --border: #d6e4f2;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      line-height: 1.75;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* ヘッダー（ヒーローエリア） */
+    .hero {
+      background: linear-gradient(135deg, #1659a3 0%, #2b82d9 60%, #56a8f5 100%);
+      color: #ffffff;
+      padding: 3.5rem 1.25rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* コートライン風の装飾 */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      max-width: 760px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      padding: 0.25rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.6rem, 4vw, 2.3rem);
+      font-weight: 700;
+      letter-spacing: 0.03em;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      font-size: clamp(0.95rem, 2.2vw, 1.05rem);
+      opacity: 0.95;
+      max-width: 560px;
+      margin: 0 auto;
+    }
+
+    /* メインコンテナ */
+    .container {
+      max-width: 820px;
+      margin: -2rem auto 3rem;
+      padding: 0 1.25rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* カード共通スタイル */
+    .card {
+      background-color: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 1.75rem;
+      box-shadow: 0 6px 20px rgba(26, 102, 184, 0.06);
+    }
+
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 1.25rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--primary-light);
+    }
+
+    .section-title svg {
+      flex-shrink: 0;
+      color: var(--primary);
+    }
+
+    /* プロフィールグリッド */
+    .profile-intro {
+      margin-bottom: 1.5rem;
+      color: var(--text-main);
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .profile-item {
+      background-color: var(--bg-base);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem 1.2rem;
+    }
+
+    .profile-label {
+      display: block;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 0.3rem;
+    }
+
+    .profile-value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    /* バドミントンの魅力セクション */
+    .badminton-lead {
+      margin-bottom: 1.5rem;
+      color: var(--text-sub);
+    }
+
+    .appeal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.1rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .appeal-card {
+      background: linear-gradient(180deg, #ffffff 0%, #f7fbff 100%);
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 1.25rem;
+    }
+
+    .appeal-card h3 {
+      font-size: 1.05rem;
+      color: var(--primary-dark);
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+
+    .appeal-card p {
+      font-size: 0.92rem;
+      color: var(--text-sub);
+      line-height: 1.65;
+    }
+
+    /* リンクボックス */
+    .link-box {
+      background-color: var(--primary-light);
+      border: 1px solid #bfd9f5;
+      border-radius: 12px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .link-box-text {
+      flex: 1 1 260px;
+    }
+
+    .link-box-text strong {
+      display: block;
+      color: var(--primary-dark);
+      font-size: 1rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .link-box-text span {
+      font-size: 0.88rem;
+      color: var(--text-sub);
+    }
+
+    .btn-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background-color: var(--primary);
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 0.75rem 1.3rem;
+      border-radius: 8px;
+      transition: background-color 0.2s ease, transform 0.15s ease;
+    }
+
+    .btn-link:hover,
+    .btn-link:focus-visible {
+      background-color: var(--primary-dark);
+      transform: translateY(-1px);
+    }
+
+    /* フッター */
+    footer {
+      text-align: center;
+      padding: 1.5rem 1rem 2.5rem;
+      color: var(--text-sub);
+      font-size: 0.85rem;
+    }
+
+    /* 狭い画面（スマートフォン）向け調整 */
+    @media (max-width: 600px) {
+      .hero {
+        padding: 2.75rem 1rem 3.25rem;
+      }
+
+      .hero::before {
+        inset: 8px;
+      }
+
+      .card {
+        padding: 1.4rem 1.15rem;
+        border-radius: 12px;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+      }
+
+      .btn-link {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <span class="badge">大学1年生・自己紹介</span>
+      <h1>はじめまして！ゆきのページへようこそ</h1>
+      <p>同じ講義やキャンパスで会う皆さん、よろしくお願いします。私のことと、大好きなバドミントンの魅力をまとめました。</p>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- プロフィール -->
+    <section class="card" aria-labelledby="profile-heading">
+      <h2 id="profile-heading" class="section-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="8" r="4"></circle>
+          <path d="M4 20c1.8-3.6 5-5 8-5s6.2 1.4 8 5"></path>
+        </svg>
+        プロフィール
+      </h2>
+      <p class="profile-intro">
+        大学に入ったばかりの1年生です。新しい環境でいろいろなことにチャレンジしたいと思っています。見かけたら気軽に話しかけてもらえると嬉しいです！
+      </p>
+      <div class="profile-grid">
+        <div class="profile-item">
+          <span class="profile-label">名前</span>
+          <span class="profile-value">ゆき</span>
+        </div>
+        <div class="profile-item">
+          <span class="profile-label">学年・学び</span>
+          <span class="profile-value">大学1年生（情報系を勉強中）</span>
+        </div>
+        <div class="profile-item">
+          <span class="profile-label">これから取りたいもの</span>
+          <span class="profile-value">情報系の資格・運転免許</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- バドミントンの魅力 -->
+    <section class="card" aria-labelledby="badminton-heading">
+      <h2 id="badminton-heading" class="section-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 2L8 14h8L12 2z"></path>
+          <path d="M8 14c0 2.5 1.8 4 4 4s4-1.5 4-4"></path>
+          <line x1="9.5" y1="9" x2="14.5" y2="9"></line>
+        </svg>
+        伝えたいこと：バドミントンの魅力
+      </h2>
+      <p class="badminton-lead">
+        「体育館で羽根を打ち合うスポーツ」というイメージが強いバドミントンですが、実際にやってみると奥が深くてとても爽快な競技です。特に知ってほしい3つの魅力を紹介します。
+      </p>
+
+      <div class="appeal-grid">
+        <article class="appeal-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polyline>
+            </svg>
+            スピード感と爽快感
+          </h3>
+          <p>
+            スマッシュの初速は球技の中でもトップクラス。シャトルを芯でとらえたときの音とスピードは、一度味わうとやみつきになる気持ちよさです。
+          </p>
+        </article>
+
+        <article class="appeal-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M9 12l2 2 4-4"></path>
+            </svg>
+            頭を使う奥深い駆け引き
+          </h3>
+          <p>
+            力強く打つだけでなく、ネット際にそっと落とすヘアピンやコート奥へ飛ばすクリアなど、緩急をつけて相手を動かす戦略的な楽しさがあります。
+          </p>
+        </article>
+
+        <article class="appeal-card">
+          <h3>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            誰でも楽しくラリーできる
+          </h3>
+          <p>
+            ラケットが軽く、初心者でもラリーを続けやすいのが良いところ。少し動くだけでも良い運動になり、授業の合間のリフレッシュにもぴったりです。
+          </p>
+        </article>
+      </div>
+
+      <div class="link-box">
+        <div class="link-box-text">
+          <strong>バドミントンに興味がわいた方へ</strong>
+          <span>バドミントン部Ducksの紹介ページもぜひチェックしてみてください。</span>
+        </div>
+        <a
+          class="btn-link"
+          href="https://hp.brs.nihon-u.ac.jp/~NUBScommon/ClubCircle/1002200%E3%83%90%E3%83%89%E3%83%9F%E3%83%B3%E3%83%88%E3%83%B3%E9%83%A8Ducks.html"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          紹介ページを見る
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© ゆき - 大学1年生 自己紹介ページ</p>
+  </footer>
+
+</body>
+</html>
